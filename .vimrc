@@ -62,6 +62,8 @@ map <C-n> :Sex!<CR>
 map ff :CocCommand clangd.switchSourceHeader<CR>
 map vsp :vertical resize +5<CR>
 map vsm :vertical resize -5<CR>
+map <C-d> <C-d>zz
+map <C-u> <C-u>zz
 inoremap jj <ESC>
 
 

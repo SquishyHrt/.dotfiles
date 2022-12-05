@@ -3,7 +3,7 @@
 alias ui='cd /mnt/c/Users/paolo/Desktop/'
 alias cat='bat'
 alias mk='vim Makefile'
-alias ocr='cd ~/propg/c/ocr-0x12R/src/image_traitment'
+alias ocr='cd ~/Documents/ocr-0x12R'
 alias ph='cd ~/propg/c/OCR/image_traitment/include/image_traitment'
 alias bashe='vim ~/.zshrc'
 alias tp='cd /mnt/c/Users/paolo/Desktop/TPS/C#/paolo.wattebled-2026-abacus'
@@ -16,6 +16,11 @@ alias gsync='~/script/gitsync.sh'
 alias mcc='make clean'
 alias mbb='make -Bj'
 alias mcb='make clean && make -Bj'
+alias glog='git log --oneline --decorate --graph --all'
+alias gsync='~/.dotfiles/gsync.sh'
+
+alias alacritty='~/.config/alacritty/target/release/alacritty'
+
 function cd {
     builtin cd "$@" && ls -F --color=auto
 }
