@@ -1,9 +1,10 @@
 dot_list=".zshrc .vimrc .oh-my-zsh .vim"
 
-pkg_list="bat nodejs npm sl tree zsh vim valgrind btop neofetch onefetch python3 git curl"
+pkg_list="bat nodejs npm sl tree zsh vim valgrind btop neofetch python3 git curl"
 
-sudo pacman -Syu
-sudo pacman -S $pkg_list -y
+sudo apt update
+sudp apt upgrade
+sudo apt install $pkg_list -y
 
 #for p in $pkg_list; do
 #    sudo pacman -S $p
