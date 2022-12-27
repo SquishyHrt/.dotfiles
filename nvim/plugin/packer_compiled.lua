@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/squishy/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  bogster = {
+    loaded = true,
+    path = "/home/squishy/.local/share/nvim/site/pack/packer/start/bogster",
+    url = "https://github.com/vv9k/bogster"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/squishy/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -108,6 +113,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/squishy/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
+  },
+  gruvbox = {
+    loaded = true,
+    path = "/home/squishy/.local/share/nvim/site/pack/packer/start/gruvbox",
+    url = "https://github.com/morhetz/gruvbox"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -139,6 +149,11 @@ _G.packer_plugins = {
     path = "/home/squishy/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["onedark.vim"] = {
+    loaded = true,
+    path = "/home/squishy/.local/share/nvim/site/pack/packer/start/onedark.vim",
+    url = "https://github.com/joshdick/onedark.vim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/squishy/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -159,6 +174,31 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/squishy/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["tender.vim"] = {
+    loaded = true,
+    path = "/home/squishy/.local/share/nvim/site/pack/packer/start/tender.vim",
+    url = "https://github.com/jacoborus/tender.vim"
+  },
+  ["toggle-lsp-diagnostics.nvim"] = {
+    loaded = true,
+    path = "/home/squishy/.local/share/nvim/site/pack/packer/start/toggle-lsp-diagnostics.nvim",
+    url = "https://github.com/WhoIsSethDaniel/toggle-lsp-diagnostics.nvim"
+  },
+  vim = {
+    loaded = true,
+    path = "/home/squishy/.local/share/nvim/site/pack/packer/start/vim",
+    url = "https://github.com/dracula/vim"
+  },
+  ["vim-monokai-tasty"] = {
+    loaded = true,
+    path = "/home/squishy/.local/share/nvim/site/pack/packer/start/vim-monokai-tasty",
+    url = "https://github.com/patstockwell/vim-monokai-tasty"
+  },
+  ["vim-moonfly-colors"] = {
+    loaded = true,
+    path = "/home/squishy/.local/share/nvim/site/pack/packer/start/vim-moonfly-colors",
+    url = "https://github.com/bluz71/vim-moonfly-colors"
   }
 }
 

@@ -14,6 +14,7 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
+vim.opt.background=dark
 
 vim.opt.scrolloff = 8
 

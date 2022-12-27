@@ -10,3 +10,8 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 
 vim.keymap.set("i", "jj", "<Esc>")
+
+vim.keymap.set("n", "<leader>t", '<Plug>(toggle-lsp-diag-on)')
+
+vim.keymap.set("n", "<leader>tlo", "<Plug>(toggle-lsp-diag-off)")
+vim.keymap.set("n", "<leader>tlf", "<Plug>(toggle-lsp-diag-on)")

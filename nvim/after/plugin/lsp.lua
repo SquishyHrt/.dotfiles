@@ -1,6 +1,19 @@
 local lsp = require("lsp-zero")
 
+
+require'toggle_lsp_diagnostics'.init({ start_on = true })
+
 lsp.preset("recommended")
+
+lsp.configure('sumneko_lua', {
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+})
 
 lsp.ensure_installed({
     'tsserver',
@@ -19,6 +32,17 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
     ['<C-y>'] = cmp.mapping.confirm({ select = true }),
     ["<C-Space>"] = cmp.mapping.complete(),
 })
+
+lsp.set_preferences({
+    suggest_lsp_servers = true,
+    sign_icons = {
+        error = 'E',
+        warn = 'W',
+        hint = 'H',
+        info = 'I'
+    }
+})
+
 
 -- disable completion with tab
 -- this helps with copilot setup
