@@ -1,8 +1,6 @@
 local lsp = require("lsp-zero")
 
 
-require'toggle_lsp_diagnostics'.init({ start_on = true })
-
 lsp.preset("recommended")
 
 lsp.configure('sumneko_lua', {
@@ -48,5 +46,6 @@ lsp.set_preferences({
 -- this helps with copilot setup
 cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
+
 
 lsp.setup()

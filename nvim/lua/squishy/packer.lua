@@ -59,4 +59,5 @@ return require('packer').startup(function(use)
     }
     -- inline error
     use('WhoIsSethDaniel/toggle-lsp-diagnostics.nvim')
+    use("github/copilot.vim")
 end)
