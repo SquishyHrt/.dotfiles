@@ -16,6 +16,9 @@ call plug#end()
 " Put the noice line
 set laststatus=2
 
+
+let g:coc_disable_startup_warning = 1
+
 "Config for rainbow vim
 let g:rainbow_active = 1
 let g:rainbow_load_separately = [
