@@ -35,8 +35,10 @@ update_nodejs() {
     nvm install v18.13.0
 }
 
-test() {
-    echo "lol"
+link_alacritty() {
+    rm -rf ~/.config/alacritty/
+    mkdir ~/.config/alacritty
+    ln -sF ~/.dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
 }
 
 all() {

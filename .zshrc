@@ -11,6 +11,7 @@ alias mcb='make clean && make -Bj'
 alias bashe='vim ~/.zshrc'
 alias vime='vim ~/.vimrc'
 alias nvime='nvim ~/.config/nvim/'
+alias alae='nvim ~/.dotfiles/alacritty.yml'
 alias ress='source ~/.bashrc'
 
 alias vim='nvim'
