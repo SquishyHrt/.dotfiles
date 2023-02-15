@@ -13,15 +13,14 @@ alias vime='vim ~/.vimrc'
 alias nvime='nvim ~/.config/nvim/'
 alias alae='nvim ~/.dotfiles/alacritty.yml'
 alias confe='nvim ~/.config/i3/config'
-alias ress='source ~/.bashrc'
+alias ress='source ~/.zshrc'
 
-alias vim='nvim'
+alias vim='vim'
 alias nv='nvim .'
 
 alias glog='git log --oneline --decorate --graph --all'
 alias gsync='~/.dotfiles/gsync.sh'
 
-alias pacman='sudo pacman'
 
 function cd {
     builtin cd "$@" && ls --color=auto
