@@ -17,4 +17,5 @@ vim.keymap.set("n", "<leader>tlo", "<Plug>(toggle-lsp-diag-off)")
 vim.keymap.set("n", "<leader>tlf", "<Plug>(toggle-lsp-diag-on)")
 
 
+vim.api.nvim_set_keymap("i", "<C-b>", "copilot#Accept('<CR>')", {expr=true, silent=true})
 
