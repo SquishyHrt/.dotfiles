@@ -16,14 +16,11 @@ return require('packer').startup(function(use)
 	}
 
     -- Colorschemes 
-    --
-	use('rose-pine/neovim')
     use('patstockwell/vim-monokai-tasty')
     use('vv9k/bogster')
     use('jacoborus/tender.vim')
-    use('joshdick/onedark.vim')
     use('morhetz/gruvbox')
-    use("dracula/vim")
+    use('w0ng/vim-hybrid')
     use { 'bluz71/vim-moonfly-colors', branch = 'cterm-compat' }
 
     -- Syntax highlighting
@@ -48,16 +45,15 @@ return require('packer').startup(function(use)
             {'hrsh7th/nvim-cmp'},
             {'hrsh7th/cmp-buffer'},
             {'hrsh7th/cmp-path'},
-            {'saadparwaiz1/cmp_luasnip'},
             {'hrsh7th/cmp-nvim-lsp'},
             {'hrsh7th/cmp-nvim-lua'},
+            {'saadparwaiz1/cmp_luasnip'},
 
             -- Snippets
             {'L3MON4D3/LuaSnip'},
             {'rafamadriz/friendly-snippets'},
         }
     }
-    -- inline error
     use('WhoIsSethDaniel/toggle-lsp-diagnostics.nvim')
-    use("github/copilot.vim")
+    use('eandrju/cellular-automaton.nvim')
 end)
