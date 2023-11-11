@@ -16,3 +16,11 @@ vim.keymap.set("n", "<leader>tlf", "<Plug>(toggle-lsp-diag-on)")
 
 vim.api.nvim_set_keymap("i", "<C-b>", "copilot#Accept('<CR>')", {expr=true, silent=true})
 
+function ClangFile()
+    local c = vim.api.nvim_win_get_cursor(0)
+	vim.cmd [[:%!clang-format --style=file:/Users/paolowattebled/Documents/EPITA/S5/C_Prog/.clang-format]]
+    vim.api.nvim_win_set_cursor(0, c)
+end
+
+vim.keymap.set("n", "<C-k>", ClangFile)
+
