@@ -15,6 +15,7 @@ git status
 exit 1
 }
 
+git status -s
 message="[autocommit]: Work in Progress..."
 tag=""
 is_tag=false

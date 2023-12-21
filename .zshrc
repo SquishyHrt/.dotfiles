@@ -6,25 +6,24 @@ alias archh='env /usr/bin/arch -arm64 /bin/zsh'
 alias mk='vim Makefile'
 alias mcc='make clean'
 alias mbb='make -Bj'
-alias mcb='make clean && make -Bj'
+alias mcb='make clean -s && make -sB'
 
 alias bashe='vim ~/.zshrc'
 alias vime='vim ~/.vimrc'
 alias nvime='nvim ~/.config/nvim/'
-alias alae='nvim ~/.dotfiles/alacritty.yml'
+alias alae='nvim ~/.config/alacritty/alacritty.yml'
 alias confe='nvim ~/.config/i3/config'
 alias ress='source ~/.zshrc'
-
-alias vim='nvim'
-alias nv='nvim .'
+alias cgd='gcc -Wall -Werror -Wextra -pedantic -Wvla -g -fsanitize=address'
 
 alias glog='git log --oneline --decorate --graph --all'
 alias gsync='~/.dotfiles/gsync.sh'
 
-alias masitp='. ~/.virtualenvs/masi-py3/bin/activate && python -m jupyter notebook'
+alias acdcenv='source ~/Python_env/mounette_env/bin/activate'
+alias proj='cd /home/squishy/Documents/C_Prog/epita-ing-assistants-acu-21sh-2026-paolo.wattebled'
 
 function cd {
-    builtin cd "$@" && ls -G
+    builtin cd "$@" && ls --color=tty
 }
 
 export ZSH="$HOME/.oh-my-zsh"
@@ -44,27 +43,4 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# opam configuration
-[[ ! -r /Users/paolowattebled/.opam/opam-init/init.zsh ]] || source /Users/paolowattebled/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/paolowattebled/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/paolowattebled/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/paolowattebled/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/paolowattebled/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
+export PATH="/usr/share/dotnet:$PATH"

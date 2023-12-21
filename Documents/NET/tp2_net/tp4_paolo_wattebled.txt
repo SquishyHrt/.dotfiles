@@ -1,0 +1,17 @@
+Nom: WATTEBLED
+Prénom: PAOLO
+Numéro etudiant: 26560
+
+Q1: ICMP
+Q2:10.202.25.1
+Q3:10.202.25.160
+Q4:10
+Q5: 10.202.25.1, 192.168.4.251, 192.168.22.254, 83.136.160.12, 83.136.160.216, 83.136.160.196, 37.49.236.2, 108.170.244.225, 142.250.224.95, 8.8.8.8
+Q6: srp(Ether()/ARP(pdst="10.202.25.1"))
+Q7: B4:FB:E4:8D:FB:4F / 10.202.25.1
+Q8: BOOTP(ciaddr='10.202.25.160',xid=10)
+Q9: Options= [("message-type","discover"), "end"]
+Q10: BOOTP("xxx","xxx")
+Q11: Options= ["xxx","xxx"]
+Q12: Options= ["xxx","xxx"]
+Q13:Options= ["xxx","xxx"]

@@ -1,0 +1,13 @@
+(defun syracus (n)
+  (if (eq (rem n 2) 0)
+    (/ n 2)
+    (+ (* n 3) 1)
+  )
+)
+
+(defun syracuselist (n)
+    (if (eq 1 n)
+      (list n)
+      (cons n (syracuselist(syracus n)))
+    )
+)
