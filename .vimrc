@@ -22,8 +22,9 @@ call plug#begin('~/.vim/plugged')
  Plug 'airblade/vim-gitgutter'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
  Plug 'morhetz/gruvbox'
+ Plug 'github/copilot.vim'
 call plug#end()
-"
+
 "Config for rainbow vim
 let g:rainbow_active = 1
 
