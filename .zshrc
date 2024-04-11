@@ -1,5 +1,3 @@
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 alias intell='env /usr/bin/arch -x86_64 /bin/zsh'
 alias archh='env /usr/bin/arch -arm64 /bin/zsh'
 
@@ -22,6 +20,10 @@ alias glog='git log --oneline --decorate --graph --all'
 alias gsync='~/.dotfiles/gsync.sh'
 
 alias masitp='. ~/.virtualenvs/masi-py3/bin/activate && python -m jupyter notebook'
+
+alias mgcc='gcc -std=c99 -pedantic -Werror -Wall -Wextra -Wvla -g -fsanitize=address'
+alias proj='cd ~/Documents/EPITA/S6/Prog/epita-ing-assistants-yaka-tiger-2026-rennes-6/'
+alias bb='rm -rf build && mkdir build && autoreconf --install --verbose --force && cd build && ../configure'
 
 function cd {
     builtin cd "$@" && ls -G
@@ -47,24 +49,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# opam configuration
-[[ ! -r /Users/paolowattebled/.opam/opam-init/init.zsh ]] || source /Users/paolowattebled/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/paolowattebled/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/paolowattebled/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/paolowattebled/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/paolowattebled/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
+export PATH="/opt/homebrew/opt/bison/bin:$PATH"

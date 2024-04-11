@@ -15,7 +15,7 @@ git status
 exit 1
 }
 
-message="[autocommit]: Work in Progress..."
+message="docs: work in progress..."
 tag=""
 is_tag=false
 all_files=true
