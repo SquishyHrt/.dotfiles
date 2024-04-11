@@ -33,7 +33,6 @@ map vsp :vertical resize +5<CR>
 map <Space>pv :Ex<CR>
 map <C-d> <C-d>zz
 map <C-u> <C-u>zz
-map <C-@> :Sex!<CR>
 
 noremap <Leader>y "*y
 
@@ -55,3 +54,63 @@ set expandtab
 set cc=80
 set backspace=indent,eol,start
 set laststatus=2
+
+highlight ExtraWhitespace ctermbg=grey guibg=grey
+2match ExtraWhitespace /\s\+$/
+
+function FormatBuffer()
+    if &filetype == 'c' || &filetype == 'cpp'
+     let cursor_pos = getpos('.')
+     :%!clang-format -style=file:"/home/squishy/Documents/.clang-format"
+     call setpos('.', cursor_pos)
+    else
+        echo "Not c file"
+   endif
+ endfunction
+map <silent> <C-k> :call FormatBuffer()<CR>
+
+set nobackup
+set nowritebackup
+set updatetime=200
+set signcolumn=yes
+
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>ac  <Plug>(coc-codeaction-cursor)
+nmap <leader>as  <Plug>(coc-codeaction-source)
+nmap <leader>qf  <Plug>(coc-fix-current)
+nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
+xmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+nmap <leader>cl  <Plug>(coc-codelens-action)
+
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
