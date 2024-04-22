@@ -59,9 +59,9 @@ highlight ExtraWhitespace ctermbg=grey guibg=grey
 2match ExtraWhitespace /\s\+$/
 
 function FormatBuffer()
-    if &filetype == 'c' || &filetype == 'cpp'
+    if &filetype == 'c' || &filetype == 'cpp' || &filetype == 'h' || &filetype == 'hpp'
      let cursor_pos = getpos('.')
-     :%!clang-format -style=file:"/home/squishy/Documents/.clang-format"
+     :%!clang-format -style=file:"/home/squishy/Documents/S6/Prog/epita-ing-assistants-yaka-tiger-2026-rennes-6/.clang-format"
      call setpos('.', cursor_pos)
     else
         echo "Not c file"
