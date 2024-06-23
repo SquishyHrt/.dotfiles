@@ -29,8 +29,6 @@ lsp_zero.configure('lua_ls', {
 })
 
 
-
-
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
@@ -39,7 +37,6 @@ if not import_cmp then return end
 
 local import_luasnip, luasnip = pcall(require, 'luasnip')
 if not import_luasnip then return end
-
 
 cmp.setup({
 
@@ -130,7 +127,6 @@ cmp.setup({
 	},
 })
 
-
 lsp_zero.set_preferences({
     suggest_lsp_servers = false,
     sign_icons = {
@@ -140,5 +136,3 @@ lsp_zero.set_preferences({
         info = 'I'
     }
 })
-
-
