@@ -17,18 +17,6 @@ require('mason-lspconfig').setup({
 })
 
 
--- Fix Undefined global 'vim'
-lsp_zero.configure('lua_ls', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
-    }
-})
-
-
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
@@ -39,7 +27,6 @@ local import_luasnip, luasnip = pcall(require, 'luasnip')
 if not import_luasnip then return end
 
 cmp.setup({
-
 	snippet = {
 		expand = function(args) luasnip.lsp_expand(args.body) end,
 	},
@@ -136,3 +123,65 @@ lsp_zero.set_preferences({
         info = 'I'
     }
 })
+
+
+require'lspconfig'.lua_ls.setup {
+  on_init = function(client)
+    local path = client.workspace_folders[1].name
+    if vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc') then
+      return
+    end
+
+    client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+      runtime = {
+        -- Tell the language server which version of Lua you're using
+        -- (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT'
+      },
+      -- Make the server aware of Neovim runtime files
+      workspace = {
+        checkThirdParty = false,
+        library = {
+          vim.env.VIMRUNTIME
+          -- Depending on the usage, you might want to add additional paths here.
+          -- "${3rd}/luv/library"
+          -- "${3rd}/busted/library",
+        }
+        -- or pull in all of 'runtimepath'. NOTE: this is a lot slower
+        -- library = vim.api.nvim_get_runtime_file("", true)
+      }
+    })
+  end,
+  settings = {
+    Lua = {}
+  }
+}
+
+require'lspconfig'.clangd.setup {
+    cmd = { 'clangd',
+    '--background-index',
+    '--clang-tidy',
+    '--header-insertion=iwyu',
+    '--all-scopes-completion',
+    '--background-index',
+    '--compile_args_from=filesystem',
+    '--completion-parse=always',
+    '--completion-style=bundled',
+    '--cross-file-rename',
+    '--debug-origin',
+    '--enable-config',
+    '--fallback-style=Qt',
+    '--folding-ranges',
+    '--function-arg-placeholders',
+    '--pch-storage=memory',
+    '--suggest-missing-includes',
+    '-j=4',
+    '--log=error',
+},
+
+filetypes = { 'c', 'cpp', 'objc', 'objcpp' },
+root_dir = require'lspconfig'.util.root_pattern('compile_commands.json', 'compile_flags.txt', '.git'),
+init_options = {
+    clangdFileStatus = true
+}
+}
