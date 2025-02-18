@@ -16,7 +16,7 @@ vim.keymap.set("n", "<leader>tlf", "<Plug>(toggle-lsp-diag-on)")
 
 function ClangFile()
     local c = vim.api.nvim_win_get_cursor(0)
-    vim.cmd [[:%!clang-format --style=file:/Users/paolowattebled/Documents/EPITA/S5/Prog/.clang-format]]
+    vim.cmd [[:%!clang-format --style=file:/home/squishy/.dotfiles/.clang-format]]
     vim.api.nvim_win_set_cursor(0, c)
 end
 

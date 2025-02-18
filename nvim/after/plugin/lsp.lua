@@ -10,7 +10,7 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
     -- Replace the language servers listed here 
     -- with the ones you want to install
-    ensure_installed = {'lua_ls', 'clangd'},
+    ensure_installed = {'lua_ls'},
     handlers = {
         lsp_zero.default_setup,
     },
@@ -114,15 +114,15 @@ cmp.setup({
 	},
 })
 
-lsp_zero.set_preferences({
-    suggest_lsp_servers = false,
-    sign_icons = {
-        error = 'E',
-        warn = 'W',
-        hint = 'H',
-        info = 'I'
-    }
-})
+-- lsp_zero.set_preferences({
+--     suggest_lsp_servers = false,
+--     sign_icons = {
+--         error = 'E',
+--         warn = 'W',
+--         hint = 'H',
+--         info = 'I'
+--     }
+-- })
 
 
 require'lspconfig'.lua_ls.setup {

@@ -31,7 +31,17 @@ return require('packer').startup(function(use)
         'VonHeikemen/lsp-zero.nvim',
         requires = {
             -- LSP Support
-            {'neovim/nvim-lspconfig'},
+            {
+  "neovim/nvim-lspconfig",
+  opts = {
+    servers = {
+      clangd = {
+        mason = false,
+      },
+    },
+  },
+},
+
             {'williamboman/mason.nvim'},
             {'williamboman/mason-lspconfig.nvim'},
 
@@ -64,6 +74,13 @@ return require('packer').startup(function(use)
             vim.g.copilot_tab_fallback = "";
             -- The mapping is set to other key, see custom/lua/mappings
             -- or run <leader>ch to see copilot mapping section
+        end
+    }
+
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
         end
     }
 end)
